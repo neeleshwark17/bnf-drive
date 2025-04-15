@@ -1,0 +1,191 @@
+.trash-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f8f9fa;
+}
+
+.trash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: white;
+  border-bottom: 1px solid #dadce0;
+  height: 64px;
+}
+
+.trash-header h1 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #202124;
+  margin: 0;
+}
+
+.empty-trash-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #d93025;
+  border: 1px solid #d93025;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.empty-trash-button:hover {
+  background-color: rgba(217, 48, 37, 0.04);
+}
+
+.trash-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.trash-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trash-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  transition: background-color 0.2s;
+}
+
+.trash-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.trash-item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e8f0fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  font-size: 20px;
+}
+
+.trash-item-details {
+  flex: 1;
+}
+
+.trash-item-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #202124;
+  margin-bottom: 4px;
+}
+
+.trash-item-info {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #5f6368;
+}
+
+.trash-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.restore-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #1a73e8;
+  border: 1px solid #1a73e8;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.restore-button:hover {
+  background-color: rgba(26, 115, 232, 0.04);
+}
+
+.delete-forever-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #d93025;
+  border: 1px solid #d93025;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.delete-forever-button:hover {
+  background-color: rgba(217, 48, 37, 0.04);
+}
+
+.empty-trash-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+.empty-trash-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-trash-state h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #202124;
+  margin: 0 0 8px 0;
+}
+
+.empty-trash-state p {
+  font-size: 14px;
+  color: #5f6368;
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .trash-content {
+    padding: 16px;
+  }
+  
+  .trash-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+  
+  .trash-item-icon {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+  
+  .trash-item-details {
+    margin-bottom: 12px;
+    width: 100%;
+  }
+  
+  .trash-item-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+} 

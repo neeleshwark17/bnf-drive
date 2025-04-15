@@ -1,0 +1,163 @@
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background-color: #ffffff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+}
+
+.sidebar-header {
+  height: 64px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.drive-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+}
+
+.drive-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.drive-text {
+  font-size: 22px;
+  color: #5f6368;
+}
+
+.new-button-container {
+  padding: 8px 16px;
+  margin-bottom: 8px;
+}
+
+.new-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 24px;
+  padding: 12px 24px;
+  color: #1f1f1f;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  width: auto;
+  min-width: 120px;
+}
+
+.new-button:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.new-icon {
+  font-size: 16px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0 12px;
+  flex: 1;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 48px;
+  color: #1f1f1f;
+  text-decoration: none;
+  border-radius: 0 16px 16px 0;
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.sidebar-item:hover {
+  background-color: #f1f3f4;
+}
+
+.sidebar-item.active {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  font-weight: 500;
+}
+
+.sidebar-icon {
+  width: 24px;
+  font-size: 18px;
+  margin-right: 12px;
+  color: #5f6368;
+}
+
+.sidebar-item.active .sidebar-icon {
+  color: #1a73e8;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background-color: #dadce0;
+  margin: 8px 0;
+}
+
+.storage-section {
+  margin-top: auto;
+  padding-bottom: 16px;
+}
+
+.storage-details {
+  padding: 8px 16px;
+}
+
+.storage-progress {
+  width: 100%;
+  height: 4px;
+  background-color: #e8eaed;
+  border-radius: 2px;
+  margin: 8px 0;
+  overflow: hidden;
+}
+
+.storage-progress-bar {
+  height: 100%;
+  background-color: #1a73e8;
+  border-radius: 2px;
+}
+
+.storage-text {
+  color: #5f6368;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.get-storage-button {
+  background: none;
+  border: none;
+  color: #1a73e8;
+  font-size: 14px;
+  padding: 0;
+  cursor: pointer;
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+}
+
+.get-storage-button:hover {
+  text-decoration: underline;
+}
+
+/* Main content adjustment */
+.main-content-with-sidebar {
+  margin-left: 260px;
+  max-width: calc(100vw - 260px);
+  overflow-x: hidden;
+} 

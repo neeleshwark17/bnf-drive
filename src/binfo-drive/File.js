@@ -15,11 +15,10 @@ export default function File({ file, passFolder }) {
 
   async function handleDelete(e) {
     e.preventDefault();
+    e.stopPropagation();
 
     const storageRef = storage.ref();
     let photo = storageRef.child(`/files/${currentUser.uid}/${filePath}`);
-
-    console.log("---------->PHOTO", photo.location.path);
 
     photo
       .delete()
@@ -31,7 +30,6 @@ export default function File({ file, passFolder }) {
       });
 
     const record = await firestore.collection("files").doc(file.id);
-    console.log(file);
     record.delete();
   }
 
@@ -52,44 +50,79 @@ export default function File({ file, passFolder }) {
     }
     return false;
   }
+
+  function getFileIcon() {
+    const ext = getExtension(file).toLowerCase();
+    
+    // Return appropriate icon based on file extension
+    switch (ext) {
+      case "pdf":
+        return "📄";
+      case "doc":
+      case "docx":
+        return "📝";
+      case "xls":
+      case "xlsx":
+        return "📊";
+      case "ppt":
+      case "pptx":
+        return "📑";
+      case "txt":
+        return "📃";
+      case "zip":
+      case "rar":
+        return "📦";
+      default:
+        return "📄";
+    }
+  }
+
   if (isImage(file)) {
     return (
-      <div>
+      <div className="file-item">
         <a
           href={file.url}
           target="_blank"
-          className="btn btn-outline-dark
-                  text-truncate w-100"
+          rel="noopener noreferrer"
+          className="file-link"
+          style={{ textDecoration: 'none', color: 'inherit' }}
         >
-          <img width="140px" height="100px" src={file.url} />
-          <br />
-          {file.name}
+          <div className="file-preview">
+            <img src={file.url} alt={file.name} className="file-image" />
+          </div>
+          <div className="file-name">{file.name}</div>
         </a>
-        <br />
-        <center>
-          <IconButton onClick={handleDelete}>
-            <DeleteOutlineIcon />
-          </IconButton>
-        </center>
+        <IconButton 
+          onClick={handleDelete}
+          className="file-delete-button"
+          size="small"
+        >
+          <DeleteOutlineIcon fontSize="small" />
+        </IconButton>
       </div>
     );
   } else {
     return (
-      <div>
+      <div className="file-item">
         <a
           href={file.url}
           target="_blank"
-          className="btn btn-outline-dark
-                  text-truncate w-100"
+          rel="noopener noreferrer"
+          className="file-link"
+          style={{ textDecoration: 'none', color: 'inherit' }}
         >
-          {file.name}
+          <div className="file-preview">
+            <div className="file-icon">{getFileIcon()}</div>
+          </div>
+          <div className="file-name">{file.name}</div>
         </a>
-        <br />
-        <center>
-          <IconButton onClick={handleDelete}>
-            <DeleteOutlineIcon />
-          </IconButton>
-        </center>
+        <IconButton 
+          onClick={handleDelete}
+          className="file-delete-button"
+          size="small"
+        >
+          <DeleteOutlineIcon fontSize="small" />
+        </IconButton>
       </div>
     );
   }
