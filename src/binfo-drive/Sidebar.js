@@ -33,12 +33,12 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div className="new-button-container">
+      {/* <div className="new-button-container">
         <button className="new-button">
           <FontAwesomeIcon icon={faPlus} className="new-icon" />
           <span>New</span>
         </button>
-      </div>
+      </div> */}
 
       <nav className="sidebar-menu">
         <NavLink to="/" className="sidebar-item" end>
